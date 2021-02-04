@@ -17,25 +17,23 @@ class Email
      */
     private $mail = \stdClass::class;
     
-    public function __construct()
+    public function __construct($smtpDebug, $host, $user, $pass, $smtSecure, $port, $setFromEmail, $setFromName)
     {
         $this->mail = new PHPMailer(true);
 
         //Server settings
-        $this->mail->SMTPDebug  = 2;                               // Enable verbose debug output
+        $this->mail->SMTPDebug  = $smtpDebug; //2                               // Enable verbose debug output
         $this->mail->isSMTP();                                     // Send using SMTP
-        $this->mail->Host       = 'smtp-web.kinghost.net';         // Set the SMTP server to send through
+        $this->mail->Host       = $host;//'smtp-web.kinghost.net';         // Set the SMTP server to send through
         $this->mail->SMTPAuth   = true;                            // Enable SMTP authentication
-        $this->mail->Username   = 'dyego@cmhfarmaceutica.com.br';  // SMTP username
-        $this->mail->Password   = 'sucesso*0800';                  // SMTP password
-        $this->mail->SMTPSecure = 'tls';                           // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-        $this->mail->Port       = 587; 
+        $this->mail->Username   = $user;//'dyego@cmhfarmaceutica.com.br';  // SMTP username
+        $this->mail->Password   = $pass;//'sucesso*0800';                  // SMTP password
+        $this->mail->SMTPSecure = $smtSecure;//'tls';                           // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+        $this->mail->Port       = $port; //587; 
         $this->mail->CharSet    = 'utf-8';
         $this->mail->setLanguage('br');
         $this->mail->isHTML(true);
-        
-        //Recipients (Destinatários)
-        $this->mail->setFrom('dyego@cmhfarmaceutica.com.br', 'Dyego CMH');
+        $this->mail->setFrom($setFromEmail,$setFromName); //'dyego@cmhfarmaceutica.com.br', 'Dyego CMH');
     }
 
     public function sendMail($subject, $body, $replyEmail, $replyName, $addressEmail, $addressName)
