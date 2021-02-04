@@ -1,0 +1,27 @@
+{
+    "name": "dyegoalmeida/notification",
+    "description": "This is a library that uses composer as the basics for generating email notifications",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dyego dos Santos Almeida",
+            "email": "dyegocm@outlook.com",
+            "homepage": "https://www.dyegoalmeida.com.br",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "6.2.0"
+    },
+    "config":{
+        "vendor-dir": "lib_ext"
+    },
+    "autoload":{
+        "psr-4":{
+            "Notification\\":"_app"
+        }
+
+    }
+}
