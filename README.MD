@@ -40,6 +40,7 @@ MIT
 ** Another UpInside Training course, make good use of it! **
 
 [//]: #
+[Dyego Almeida]: <mailto: dyegocm@outlook.com>
 [Gustavo Web]: <mailto: gustavo@upinside.com.br>
 [Robson V. Leite]: <mailto: robson@upinside.com.br>
 [UpInside Treinamentos]: <https://www.upinside.com.br>
